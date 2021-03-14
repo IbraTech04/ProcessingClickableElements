@@ -58,9 +58,14 @@ public class ClickableImage {
 	}
 
 	public void setImg(PImage temp) { // Function to set the image
-		img = temp; // Set the image
-		picSizeX = img.width; // Default the X and Y size to the image default.
-		picSizeY = img.height;
+		try {
+			img = temp; // Set the image
+			picSizeX = img.width; // Default the X and Y size to the image default.
+			picSizeY = img.height;
+		} catch (Exception e) {
+			System.out.println("Error Loading Image");
+
+		}
 	}
 
 	public void drawImage() {
