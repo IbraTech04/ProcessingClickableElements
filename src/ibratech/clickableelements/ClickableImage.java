@@ -63,13 +63,17 @@ public class ClickableImage {
 		picSizeY = img.height;
 	}
 
-	public void drawImage() { // Function to display the image
-		if (isCenter) {
-			myParent.imageMode(3);
-		} else {
-			myParent.imageMode(0);
+	public void drawImage() {
+		try {// Function to display the image
+			if (isCenter) {
+				myParent.imageMode(3);
+			} else {
+				myParent.imageMode(0);
+			}
+			myParent.image(img, picPosX, picPosY, picSizeX, picSizeY);
+		} catch (Exception e) {
+			System.out.println("Error: Image not loaded. Use .setImg with a PImage argument to set an image");
 		}
-		myParent.image(img, picPosX, picPosY, picSizeX, picSizeY);
 	}
 
 	public void setSizeX(int size) { // Function to set X-size of image
